@@ -6,7 +6,21 @@ bot = telebot.TeleBot(token)
 
 @bot.message_handler(commands=['start'])
 def start_message(message):
-    return bot.send_message(message.chat.id, "привет пользователь, этот бот сохраняет твои любимые места")
+    return bot.send_message(message.chat.id, "Привет пользователь, этот бот сохраняет координаты и фото твои любимых мест")
+
+@bot.message_handler(commands=['add'])
+def add_place(message):
+    return bot.send_message(message.chat.id, 'введите координаты места')
+
+
+
+@bot.message_handler(commands=['list'])
+def list_of_place(message):
+    return bot.send_message(message.chat.id, 'ваши любимые места')
+
+@bot.message_handler(commands=['reset'])
+def reset_all(message):
+    return bot.send_message(message.chat.id, 'очищение')
 
 if __name__ == '__main__':
     bot.polling()
