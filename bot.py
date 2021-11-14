@@ -19,7 +19,7 @@ def add_place(message):
 
     #cursor = sqlite3.connect('place.db')
 
-    print(bot.send_location(message.chat.id))
+    bot.send_location(message.chat.id)
 
 
 
