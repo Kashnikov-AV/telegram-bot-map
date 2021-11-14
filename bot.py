@@ -1,4 +1,8 @@
 import telebot
+import sqlite3
+import requests
+
+
 
 token = "2069589275:AAEV-G8mZtYZR4P_W7O7ZFFc9zqnw6zbw50"
 
@@ -10,7 +14,12 @@ def start_message(message):
 
 @bot.message_handler(commands=['add'])
 def add_place(message):
-    return bot.send_message(message.chat.id, 'введите координаты места')
+    bot.send_message(message.chat.id, 'введите название места')
+    #bot.
+
+    #cursor = sqlite3.connect('place.db')
+
+    print(bot.send_location(message.chat.id))
 
 
 
